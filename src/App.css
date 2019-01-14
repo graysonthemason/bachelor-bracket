@@ -17,9 +17,19 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.cardMedia {
+  height: 200px;
+}
+.dunzo {
+filter: grayscale(100%);
+opacity: .5;
+}
 
 .App-link {
   color: #61dafb;
+}
+.menuBtn {
+  text-transform: uppercase;
 }
 
 @keyframes App-logo-spin {
