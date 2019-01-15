@@ -35,7 +35,7 @@ const brackets = [{
 },{
   name: "Kim",
   profilePic: "",
-  picks: [cassie, tayshia, hannag, caelyn, hannab, demi,caitlin, onyeka, kaity, sydney, courtney, caitlin, catherine, kirpa, elyse, nicole, tracy, heather, bri]
+  picks: [cassie, tayshia, hannag, caelyn, hannab, demi,caitlin, onyeka, kaity, sydney, courtney, catherine, kirpa, elyse, nicole, tracy, heather, bri]
 },{
   name: "Tennis",
   profilePic: "",
