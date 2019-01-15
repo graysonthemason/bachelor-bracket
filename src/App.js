@@ -24,7 +24,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 // Custom child components
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-const constants = {}
+const constants = {pot: (dataStandings.length -1) *20}
 
 function findWithAttr(array, attr, value) {
   for(var i = 0; i < array.length; i += 1) {
@@ -40,7 +40,6 @@ function getScore(picks) {
   let prev = 0;
   let startingNo = 23;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
-  let newData = [];
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
     if (week.cuts){
@@ -88,13 +87,9 @@ function lintStandings() {
   });
   const filteredNew = filtered.sort(compareScore);
   const secondFilteredNew = secondFiltered.sort(comparePreviousScore);
-  console.log(filteredNew);
-  console.log(secondFilteredNew);
-
   dataStandings.forEach((user,index)=>{
     const curIndex = findWithAttr(filteredNew, "name", user["name"]);
     const oldIndex = findWithAttr(secondFilteredNew, "name", user["name"]);
-    console.log(`${user.name} | ${curIndex} | ${oldIndex} | ${user.score} | ${user.previousScore}`)
     dataStandings[index].diff = oldIndex - curIndex;
   })
 }

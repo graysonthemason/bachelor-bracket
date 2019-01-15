@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import {
   ArrowUpward,
-  ArrowDownward, Minimize
+  ArrowDownward
 } from '@material-ui/icons'
 
 function compareScore(a,b) {
@@ -25,7 +25,6 @@ function compareScore(a,b) {
 }
 
 function getStandingsContent(dataStandings, constants) {
-  console.log(constants);
   const sortedStandingsed = dataStandings.sort(compareScore);
   return (
     <Fragment>
@@ -71,7 +70,7 @@ class Standings extends Component {
       Leaderboard <img alt="" className="datBigRose" src={`${process.env.PUBLIC_URL}/assets/bigRose.png`}/>
       </Typography>
       <Typography gutterBottom variant='h2'>
-      {constants.curWeek.name}
+      {constants.curWeek.name} | ${constants.pot} pot
       </Typography>
       {getStandingsContent(dataStandings, constants)}
     </Fragment>
