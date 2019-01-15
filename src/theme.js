@@ -15,26 +15,27 @@ const theme = createMuiTheme({
     //     border: 'solid 1px #eee'
     //   }
     // },
-    // MuiTypography: {
+    MuiTypography: {
     //   h4: {
     //     color: 'rgba(0, 0, 0, 0.5)'
     //   },
     //   h5: {
     //     fontFamily: ['Montserrat', 'sans-serif'].join(',')
     //   },
-    //   h1: {
-    //     fontSize: '3rem',
-    //     fontFamily: ['Montserrat', 'sans-serif'].join(',')
-    //   },
-    //   h2: {
-    //     textTransform: 'uppercase',
+      h1: {
+        fontSize: '3rem',
+        fontFamily: ['Dancing Script', 'cursive'].join(',')
+      },
+      h2: {
+        textTransform: 'uppercase',
+        fontFamily: ['Dancing Script', 'cursive'].join(','),
     //     color: 'rgba(0, 0, 0, 0.C75)',
     //     // background: '#444',
     //     // padding: '1rem',
-    //     fontSize: '1.5rem',
+        fontSize: '1.5rem',
     //     fontFamily: ['Montserrat', 'sans-serif'].join(',')
-    //   }
-    // }
+      }
+    }
   },
   palette: {
     // text: {

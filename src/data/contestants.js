@@ -17,7 +17,7 @@ const contestants = [{
   - Her favorite movies are The Mighty
   Ducks, The Lion King and Old School.
   - Country is her favorite music genre.`,
-  exitWk: 9,
+  exitWk: null
 }, {
   id: 2,
   profilePic: "angelique",

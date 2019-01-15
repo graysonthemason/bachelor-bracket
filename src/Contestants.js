@@ -2,7 +2,6 @@ import React, {
   Component, Fragment
 } from 'react';
 
-import dataContestants from './data/contestants'
 
 import {
   AppBar,
@@ -20,10 +19,9 @@ import {
   CardMedia
 } from '@material-ui/core';
 
-function renderContestants() {
+function renderContestants(dataContestants) {
   const jsx = [];
   dataContestants.forEach(contestant=> {
-    console.log(contestant.exitWk)
     const classes = contestant.exitWk?"cardMedia dunzo":"cardMedia";
     jsx.push(
       <Grid item lg={2} md={3} sm={4} xs={6}>
@@ -54,15 +52,13 @@ class Contestants extends Component {
   constructor(props) {
     super(props);
   }
-
-
   render() {
-    console.log(dataContestants)
+    const{dataContestants} = this.props 
     return (<Fragment><Typography variant='h1'>
     Contestants
     </Typography>
     <Grid container  spacing={24}>
-    {renderContestants()}
+    {renderContestants(dataContestants)}
     </Grid>
     </Fragment>
     );
