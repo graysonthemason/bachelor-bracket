@@ -75,11 +75,6 @@ function getTableRows(row, dataContestants, weeks) {
           <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
         </ListItem>)
         break;
-        case 19:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
-        </ListItem>)
-        break;
       default:
         break;
     }
