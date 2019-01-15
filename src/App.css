@@ -44,8 +44,8 @@ opacity: .5;
 .weekBreak {
   background: lightgrey;
   text-transform: uppercase;
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
 }
 
 .weekBreakText {

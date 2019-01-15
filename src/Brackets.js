@@ -25,7 +25,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function getTableRows(row, dataContestants, weeks) {
   const jsx = [];
-  let counter = 1;
+  let counter = 0;
   let total = row.picks.length
   row.picks.map(el=>{
     const contestant = dataContestants.filter(function (cont) {return cont.id === el})[0];
@@ -50,27 +50,27 @@ function getTableRows(row, dataContestants, weeks) {
           <ListItemText className="weekBreakText">{weeks[3].name}</ListItemText>
         </ListItem>)
         break;
-        case 5:
+        case 6:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[4].name}</ListItemText>
         </ListItem>)
         break;
-        case 7:
+        case 9:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[5].name}</ListItemText>
         </ListItem>)
         break;
-        case 10:
+        case 12:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[6].name}</ListItemText>
         </ListItem>)
         break;
-        case 13:
+        case 15:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[7].name}</ListItemText>
         </ListItem>)
         break;
-        case 16:
+        case 18:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
         </ListItem>)
@@ -78,12 +78,15 @@ function getTableRows(row, dataContestants, weeks) {
       default:
         break;
     }
-    counter += 1;
     jsx.push(<ListItem>
       <Avatar src={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}/>
       <ListItemText>{contestant.name} </ListItemText>
     </ListItem>)
+    counter += 1;
   })
+  jsx.push(<ListItem className="weekBreak">
+          <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
+        </ListItem>)
   return jsx;
 }
 
