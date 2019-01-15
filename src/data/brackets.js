@@ -70,7 +70,7 @@ const brackets = [{
   picks: [elyse, nina, tracy, kirpa, hannab, cassie, catherine, demi, erika, nicole, hannag, caitlin, sydney, alexb, bri, annie, caelyn, heather]
 },
 {
-  name: "Kaitie",
+  name: "Katie",
   profilePic:"",
   picks: [cassie, caelyn, tayshia, hannag, courtney, cassie, hannab, heather, tracy, sydney, kaity, demi, elyse, kirpa, nicole, annie, onyeka, catherine]
 },
