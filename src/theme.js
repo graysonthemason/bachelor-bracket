@@ -19,6 +19,11 @@ const theme = createMuiTheme({
     //     border: 'solid 1px #eee'
     //   }
     // },
+    MuiTableCell: {
+      root: {
+        padding: '4px 24px 4px 24px'
+      }
+    },
     MuiTypography: {
     //   h4: {
     //     color: 'rgba(0, 0, 0, 0.5)'

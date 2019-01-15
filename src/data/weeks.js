@@ -25,6 +25,15 @@ const sydney = 21;
 const tayshia= 22;
 const tracy = 23;
 
+function comparePoints(a,b) {
+  if (a.points < b.points) {
+    return -1;
+  }
+  if (a.points > b.points)
+    return 1;
+  return 0;
+}
+
 const weeks = [{
   name: "Final Rose",
   points: 30,
@@ -57,7 +66,6 @@ const weeks = [{
   name: "Week 3",
   points: 3,
   cuts: null,
-  cuts: null,
 }, {
   name: "Week 2",
   points: 2,
@@ -65,7 +73,8 @@ const weeks = [{
   cuts: [alexb,angelique, annie, erika],
 }, {
   name: "Week 1",
-  previousWk
-}]
+  previousWk,
+  points: 0
+}].sort(comparePoints)
 
 export default weeks;

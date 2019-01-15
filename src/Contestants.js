@@ -4,14 +4,7 @@ import React, {
 
 
 import {
-  AppBar,
-  Toolbar,
   Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
   Grid,
   Card,
   CardActionArea,
@@ -55,9 +48,6 @@ function renderContestants(dataContestants) {
 }
 
 class Contestants extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const{dataContestants} = this.props 
     return (<Fragment><Typography gutterBottom variant='h1'>

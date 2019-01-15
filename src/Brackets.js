@@ -3,104 +3,101 @@ import React, {
 } from 'react';
 
 import {
-  AppBar,
-  Toolbar,
   Typography,
   ExpansionPanel,
   ExpansionPanelSummary,
   ListItemText,
-  ExpansionPanelDetails,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
+  ListItemIcon,
   List,
   ListItem,
   Grid,
   Avatar,
-  TableRow
 } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {ExpandMore, ArrowDropUp} from '@material-ui/icons';
 
 
 function getTableRows(row, dataContestants, weeks) {
   const jsx = [];
   let counter = 0;
-  let total = row.picks.length
   row.picks.map(el=>{
     const contestant = dataContestants.filter(function (cont) {return cont.id === el})[0];
     switch (counter) {
       case 1:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[0].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 2:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 3:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[2].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[7].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 4:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[3].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[6].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 6:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[4].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[5].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 9:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[5].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[4].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 12:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[6].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[3].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 15:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[7].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[2].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case 18:
         jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
       default:
         break;
     }
     jsx.push(<ListItem>
-      <Avatar src={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}/>
+      <Avatar className={contestant.exitWk?"dunzo":""} src={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}/>
       <ListItemText>{contestant.name} </ListItemText>
     </ListItem>)
     counter += 1;
   })
   jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
+          <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
   return jsx;
 }
 
 class Brackets extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getStandingsContent() {
-    const {dataStandings, dataContestants, dataWeeks, constants} = this.props;
+    const {dataStandings, dataContestants, dataWeeks} = this.props;
 
     let sortedStandings = dataStandings;
   
-    let jsx;
     return (
       <Fragment>
         <Grid container spacing={16}>
@@ -108,7 +105,7 @@ class Brackets extends Component {
           return(
             <Grid item xs={12} sm={6} md={3} lg={2}>
         <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+        <ExpansionPanelSummary expandIcon={<ExpandMore />}>
         <Typography>{row.name} | {row.score} points</Typography>
         </ExpansionPanelSummary>
         <List>
@@ -125,7 +122,7 @@ class Brackets extends Component {
   }
 
   render() {
-    const {dataStandings, dataContestants, constants} = this.props;
+    const {constants} = this.props;
     return (<Fragment>
       <Typography gutterBottom variant='h1'>
       Brackets

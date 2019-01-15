@@ -11,14 +11,7 @@ import Chirps from './Chirps';
 import {
   AppBar,
   Toolbar,
-  Typography,
-  IconButton,
   Button,
-  ListItemIcon,
-  ListItemText,
-  MenuItem,
-  Menu,
-  Icon
 } from '@material-ui/core';
 
 import theme from './theme.js';
@@ -44,9 +37,10 @@ function findWithAttr(array, attr, value) {
 
 function getScore(picks) {
   let cur = 0;
-  let prev;
+  let prev = 0;
   let startingNo = 23;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
+  let newData = [];
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
     if (week.cuts){
@@ -54,8 +48,10 @@ function getScore(picks) {
       startingNo = startingNo - week.cuts.length;
       const weekPicks = picks.slice(0, startingNo);
       weekPicks.forEach(pickCnt=>{
-        if (contestantIDs.indexOf(pickCnt) > -1) cur += week.points;
-        if (week.previousWk)  prev = cur;
+        if (contestantIDs.indexOf(pickCnt) > -1) {
+          cur += week.points;
+          if (!week.currentWk)  prev += week.points;
+        }
       });
     }
   })
@@ -92,10 +88,13 @@ function lintStandings() {
   });
   const filteredNew = filtered.sort(compareScore);
   const secondFilteredNew = secondFiltered.sort(comparePreviousScore);
+  console.log(filteredNew);
+  console.log(secondFilteredNew);
 
   dataStandings.forEach((user,index)=>{
-    var curIndex = findWithAttr(filteredNew, "name", user["name"])
-    var oldIndex = findWithAttr(secondFilteredNew, "name", user["name"])
+    const curIndex = findWithAttr(filteredNew, "name", user["name"]);
+    const oldIndex = findWithAttr(secondFilteredNew, "name", user["name"]);
+    console.log(`${user.name} | ${curIndex} | ${oldIndex} | ${user.score} | ${user.previousScore}`)
     dataStandings[index].diff = oldIndex - curIndex;
   })
 }
@@ -156,20 +155,21 @@ class App extends Component {
   }
 
   render() {
+    const {page} = this.state
     return (<Fragment><CssBaseline />
     <MuiThemeProvider theme={theme}>
         <AppBar position="sticky" color="default">
           <Toolbar>
-          <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='standings' aria-label="Open drawer">
+          <Button className={`${page === "standings"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='standings' aria-label="Open drawer">
              Leaders
             </Button>
-            <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='brackets' aria-label="Open drawer">
+            <Button className={`${page === "brackets"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='brackets' aria-label="Open drawer">
              Brackets
             </Button>
-          <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='contestants' aria-label="Open drawer">
+          <Button className={`${page === "contestants"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='contestants' aria-label="Open drawer">
              Contestants
             </Button>
-            <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='chirps' aria-label="Open drawer">
+            <Button className={`${page === "chirps"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='chirps' aria-label="Open drawer">
              Chirps
             </Button>
       </Toolbar>

@@ -20,6 +20,34 @@
   margin-right: 4px;
   color: pink;
 }
+.leftDiv {
+  border-left: 1px solid #eee !important;
+}
+.noBorder {
+  border-bottom: none !important;
+}
+.headerRow {
+  height: 28px !important;
+}
+.dark {
+  border-bottom: none !important;
+  color: white !important;
+  font-weight: bold !important;
+  background: #ccc !important;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+.active {
+  border-bottom: 4px solid grey !important;
+  padding-bottom: 2px !important;
+}
+.smallIcon {
+  font-size: 20px !important;
+  margin-bottom: -4px;
+}
+.grey {
+  color: #ddd !important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,6 +60,12 @@
 }
 .cardMedia {
   height: 220px;
+}
+.success {
+  color: green !important;
+}
+.error {
+  color: red !important
 }
 .roseBG {background-size: contain;
 background-image: url(/assets/roses.jpg);
@@ -57,6 +91,9 @@ opacity: .5;
 }
 .menuBtn {
   text-transform: uppercase;
+  font-size: .8rem !important;
+    height: 4rem;
+    border-radius: 0 !important;
 }
 
 @keyframes App-logo-spin {
