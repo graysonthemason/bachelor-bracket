@@ -92,7 +92,7 @@ const brackets = [{
 {
   name: "Lauren",
   profilePic:"",
-  picks: [cassie, sydney, hannag, annie, caelyn, alexb, annie, bri, nicole, erika, heather, tracy, kaity, kirpa, nina, caitlin, courtney, nina]
+  picks: [cassie, sydney, hannag, annie, caelyn, alexb, bri, demi, nicole, erika, heather, tracy, kaity, kirpa, nina, caitlin, courtney, hannab]
 }
 ]
 
