@@ -5,7 +5,11 @@ import {
 
 const theme = createMuiTheme({
   overrides: {
-    // MuiButton: {},
+    MuiButton: {
+      root: {
+      fontFamily: ['Montserrat', 'sans-serif'].join(','),
+      }
+    },
     // MuiPaper: {
     //   rounded: {
     //     borderRadius: '2px'
