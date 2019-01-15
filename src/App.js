@@ -47,6 +47,7 @@ function getScore(picks) {
   let startingNo = 23;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
   dataWeeks.forEach(week=>{
+    if (week.currentWk) constants.curWeek = week;
     if (week.cuts){
       contestantIDs = contestantIDs.filter( ( el ) => !week.cuts.includes( el ) );
       startingNo = startingNo - week.cuts.length;
@@ -54,7 +55,6 @@ function getScore(picks) {
       weekPicks.forEach(pickCnt=>{
         if (contestantIDs.indexOf(pickCnt) > -1) cur += week.points;
         if (week.previousWk)  prev = cur;
-        if (week.currentWk) constants.curWeek = week.name;
       });
     }
   })
@@ -89,9 +89,9 @@ function lintStandings() {
     filtered.push(user);
     secondFiltered.push(user);
   });
-  
   const filteredNew = filtered.sort(compareScore);
   const secondFilteredNew = secondFiltered.sort(comparePreviousScore);
+
   dataStandings.forEach((user,index)=>{
     var curIndex = findWithAttr(filteredNew, "name", user["name"])
     var oldIndex = findWithAttr(secondFilteredNew, "name", user["name"])
@@ -118,7 +118,7 @@ function lintData() {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {page: "home"};
+    this.state = {page: "standings"};
     this.changePage = this.changePage.bind(this);
     lintData();
   }
@@ -134,12 +134,11 @@ class App extends Component {
         jsx = <Contestants dataContestants={dataContestants}/>
         break;
         case "brackets":
-        jsx = <Brackets dataContestants={dataContestants} dataStandings={dataStandings} constants={constants}/>
+        jsx = <Brackets dataContestants={dataContestants} dataStandings={dataStandings} dataWeeks={dataWeeks} constants={constants}/>
         break;
         case "standings":
         jsx = <Standings dataStandings={dataStandings} constants={constants}/>
         break;
-    
       default:
       jsx = <Home/>
         break;
@@ -157,19 +156,21 @@ class App extends Component {
     <MuiThemeProvider theme={theme}>
         <AppBar position="sticky" color="default">
           <Toolbar>
-          <Button className="menuBtn" onClick={this.changePage} variant="contained" size="medium" color="primary" data-key='standings' aria-label="Open drawer">
+          <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='standings' aria-label="Open drawer">
              Standings
             </Button>
-            <Button className="menuBtn" onClick={this.changePage} variant="contained" size="medium" color="primary" data-key='brackets' aria-label="Open drawer">
+            <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='brackets' aria-label="Open drawer">
              Brackets
             </Button>
-          <Button className="menuBtn" onClick={this.changePage} variant="contained" size="medium" color="primary" data-key='contestants' aria-label="Open drawer">
+          <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='contestants' aria-label="Open drawer">
              Contestants
             </Button>
       </Toolbar>
       </AppBar>
       <Fragment>
+        <div className="container">
       {this.getContent()}
+      </div>
       </Fragment>
     </MuiThemeProvider>
     </Fragment>

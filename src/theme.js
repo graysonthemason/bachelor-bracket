@@ -23,16 +23,19 @@ const theme = createMuiTheme({
     //     fontFamily: ['Montserrat', 'sans-serif'].join(',')
     //   },
       h1: {
-        fontSize: '3rem',
-        fontFamily: ['Dancing Script', 'cursive'].join(',')
+        fontSize: '1.5rem',
+        fontFamily: ['Montserrat', 'sans-serif'].join(','),
+        paddingLeft: '12px',
+        paddingTop: '12px'
       },
       h2: {
         textTransform: 'uppercase',
-        fontFamily: ['Dancing Script', 'cursive'].join(','),
+        fontFamily: ['Montserrat', 'sans-serif'].join(','),
+        paddingLeft: '12px',
     //     color: 'rgba(0, 0, 0, 0.C75)',
     //     // background: '#444',
     //     // padding: '1rem',
-        fontSize: '1.5rem',
+        fontSize: '.8rem',
     //     fontFamily: ['Montserrat', 'sans-serif'].join(',')
       }
     }

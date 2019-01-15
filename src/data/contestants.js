@@ -137,7 +137,6 @@ const contestants = [{
 }, {
   id: 7,
   profilePic: "cassie",
-
   name: "Cassie",
   age: "23",
   job: "Speach Pathologist",
