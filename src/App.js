@@ -6,6 +6,7 @@ import Home from './Home';
 import Standings from './Standings';
 import Brackets from './Brackets';
 import Contestants from './Contestants';
+import Chirps from './Chirps';
 
 import {
   AppBar,
@@ -139,6 +140,9 @@ class App extends Component {
         case "standings":
         jsx = <Standings dataStandings={dataStandings} constants={constants}/>
         break;
+        case "chirps":
+        jsx = <Chirps dataStandings={dataStandings} constants={constants}/>
+        break;
       default:
       jsx = <Home/>
         break;
@@ -157,13 +161,16 @@ class App extends Component {
         <AppBar position="sticky" color="default">
           <Toolbar>
           <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='standings' aria-label="Open drawer">
-             Standings
+             Leaders
             </Button>
             <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='brackets' aria-label="Open drawer">
              Brackets
             </Button>
           <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='contestants' aria-label="Open drawer">
              Contestants
+            </Button>
+            <Button className="menuBtn" onClick={this.changePage} size="medium" data-key='chirps' aria-label="Open drawer">
+             Chirps
             </Button>
       </Toolbar>
       </AppBar>
