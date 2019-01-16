@@ -31,7 +31,7 @@ class Chirps extends Component {
       <i className="chirp fab fa-twitter"></i>Kim "bring in the ringer" FB all alone in front with a perfect first week.
       </Typography>
       <Typography gutterBottom variant='body1'>
-      <i className="chirp fab fa-twitter"></i>Jayson, Lauren, Liz and Tennis match scores with 6 year old Bachelor enthusiast, Willa Mae Perrin.
+      <i className="chirp fab fa-twitter"></i>Lauren, Liz and Tennis match scores with 6 year old Bachelor enthusiast, Willa Mae Perrin.
       </Typography>
     </Grid>
     </Grid>
