@@ -10,7 +10,7 @@
   padding: 0px 2rem;
 }
 .tiny {
-  width: 12px;
+  width: 4px;
 }
 .datBigRose {
   width: 18px;
@@ -34,8 +34,9 @@
   color: white !important;
   font-weight: bold !important;
   background: #ccc !important;
-  border-top-left-radius: 2em;
-  border-bottom-left-radius: 2em;
+  /* border-radius: 2em; */
+  /* border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em; */
 }
 .active {
   border-bottom: 4px solid grey !important;

@@ -24,7 +24,7 @@ function renderContestants(dataContestants) {
   dataContestants.forEach(contestant=> {
     const classes = contestant.exitWk?"cardMedia dunzo":"cardMedia";
     jsx.push(
-      <Grid item lg={2} md={3} sm={4} xs={12}>
+      <Grid key={`contestant-${contestant.id}`} item lg={2} md={3} sm={4} xs={12}>
       <Card>
         <CardActionArea>
           <CardMedia className={classes} image={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}></CardMedia>

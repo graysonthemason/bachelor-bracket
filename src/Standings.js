@@ -50,7 +50,7 @@ function getStandingsContent(dataStandings, constants) {
             } else {
             }
             return (<TableRow key={`standing-row-${index}`}>
-              <TableCell className="dark tiny">{index+1}</TableCell>
+              <TableCell align="center" className="dark tiny">{index+1}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.score}</TableCell>
               {constants.curWeek.name === "Week 3" ? <TableCell className={`${sClass}`}>{icon}{Math.abs(row.diff)|| ''}</TableCell> :''}
