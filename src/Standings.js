@@ -25,7 +25,7 @@ function compareScore(a,b) {
 }
 
 function getStandingsContent(dataStandings, constants) {
-  const sortedStandingsed = dataStandings.sort(compareScore);
+  const sortedStandings = dataStandings.sort(compareScore);
   return (
     <Fragment>
       <Table>
@@ -38,7 +38,7 @@ function getStandingsContent(dataStandings, constants) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {sortedStandingsed.map((row, index)=>{
+          {sortedStandings.map((row, index)=>{
             let sClass = '';
             let icon = '';
             if (row.diff < 0) {

@@ -37,44 +37,57 @@ function comparePoints(a,b) {
 const weeks = [{
   name: "Final Rose",
   points: 30,
+  cutNo: 1,
+
   cuts: null,
 }, {
   name: "Runner Up",
   points: 15,
+  cutNo: 1,
+
   cuts: null,
 }, {
   name: "Fantasy Suite",
   points: 10,
+  cutNo: 1,
+
   cuts: null,
 }, {
   name: "Hometowns",
   points: 7,
+  cutNo: 2,
   cuts: null,
 }, {
   name: "Week 6",
   points: 6,
+  cutNo: 2,
   cuts: null,
 }, {
   name: "Week 5",
   points: 5,
+  cutNo: 3,
   cuts: null,
 }, {
   name: "Week 4",
   points: 4,
+  cutNo: 3,
   cuts: null,
 }, {
   name: "Week 3",
   points: 3,
-  cuts: null,
+  cutNo: 4,
+  currentWk,
+  cuts: [catherine, bri, nina],
 }, {
   name: "Week 2",
   points: 2,
-  currentWk,
-  cuts: [alexb,angelique, annie, erika],
+  previousWk,
+  cutNo: 4,
+  cuts: [alexb, angelique, annie, erika],
 }, {
   name: "Week 1",
-  previousWk,
-  points: 0
+  points: 0,
+  cutNo: 0,
 }].sort(comparePoints)
 
 export default weeks;

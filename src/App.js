@@ -38,14 +38,16 @@ function findWithAttr(array, attr, value) {
 function getScore(picks) {
   let cur = 0;
   let prev = 0;
-  let startingNo = 23;
+  let missingPts = 0;
+  let prevMissingPts = 0;
+  let startingNo = 22;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
+    startingNo = startingNo - week.cutNo;
+    const weekPicks = picks.slice(0, startingNo);
     if (week.cuts){
       contestantIDs = contestantIDs.filter( ( el ) => !week.cuts.includes( el ) );
-      startingNo = startingNo - week.cuts.length;
-      const weekPicks = picks.slice(0, startingNo);
       weekPicks.forEach(pickCnt=>{
         if (contestantIDs.indexOf(pickCnt) > -1) {
           cur += week.points;
@@ -53,8 +55,15 @@ function getScore(picks) {
         }
       });
     }
-  })
-  return {cur,prev};
+    if (!week.cuts) {weekPicks.forEach(pickCnt=>{
+      if (!(contestantIDs.indexOf(pickCnt) > -1)) {
+      missingPts+= week.points;
+      if (!week.currentWk)  prevMissingPts += week.points;
+      }
+    })
+  }
+    })
+  return {cur,prev,missingPts, prevMissingPts};
 }
 
 function compareScore(a,b) {
@@ -75,6 +84,24 @@ function comparePreviousScore(a,b) {
   return 0;
 }
 
+function compareSecondaryScore(a,b) {
+  if (a.missingPts < b.missingPts) {
+    return -1;
+  }
+  if (a.missingPts > b.missingPts)
+    return 1;
+  return 0;
+}
+
+function comparePreviousSecondaryScore(a,b) {
+  if (a.previousMissingPts < b.previousMissingPts) {
+    return -1;
+  }
+  if (a.previousMissingPts > b.previousMissingPts)
+    return 1;
+  return 0;
+}
+
 function lintStandings() {
   const filtered = [];
   const secondFiltered = [];
@@ -82,16 +109,19 @@ function lintStandings() {
     let score = getScore(user.picks);
     dataStandings[index].score = score.cur;
     dataStandings[index].previousScore = score.prev;
+    dataStandings[index].missingPts = score.missingPts;
+    dataStandings[index].prevMissingPts = score.prevMissingPts;
     filtered.push(user);
     secondFiltered.push(user);
   });
-  const filteredNew = filtered.sort(compareScore);
-  const secondFilteredNew = secondFiltered.sort(comparePreviousScore);
+  const filteredNew = filtered.sort(compareSecondaryScore).sort(compareScore)
+  const secondFilteredNew = secondFiltered.sort(comparePreviousSecondaryScore).sort(comparePreviousScore)
   dataStandings.forEach((user,index)=>{
     const curIndex = findWithAttr(filteredNew, "name", user["name"]);
     const oldIndex = findWithAttr(secondFilteredNew, "name", user["name"]);
     dataStandings[index].diff = oldIndex - curIndex;
-  })
+  });
+  console.log(dataStandings);
 }
 
 function lintContestants() {
