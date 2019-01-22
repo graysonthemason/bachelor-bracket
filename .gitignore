@@ -24,7 +24,3 @@ yarn-error.log*
 
 
 # added for production build
-src/*
-public/*
-build/static/css/*.map
-build/static/js/*.map
