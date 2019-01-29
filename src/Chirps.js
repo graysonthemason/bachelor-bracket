@@ -39,13 +39,26 @@ class Chirps extends Component {
         <Typography gutterBottom variant='h2'>Week 3 recap</Typography>
         <Divider></Divider>
           <Typography gutterBottom variant='body1'>
-          <i className="chirp fab fa-twitter"></i>We have a new leader in Ms. Katie Kills...Kim still the favorite with the bookies with the highest potential score.
+          <i className="chirp fab fa-twitter"></i>We have a new leader in Ms. Katie Kills...Kim still the Vegas favorite with the highest possible score.
           </Typography>
           <Typography gutterBottom variant='body1'>
           <i className="chirp fab fa-twitter"></i>Jayson with a strong move up the middle from 12 to 6.
           </Typography>
           <Typography gutterBottom variant='body1'>
           <i className="chirp fab fa-twitter"></i>Colton and Willa agree that Tracy is hotter than Bri...hmmmmmm.
+          </Typography>
+        </Grid>
+        <Grid item md={8} sm={10} xs={12}>
+        <Typography gutterBottom variant='h2'>Week 4 recap</Typography>
+        <Divider></Divider>
+          <Typography gutterBottom variant='body1'>
+          <i className="chirp fab fa-twitter"></i>Blaire at the Disco moves into first and has highest potential point score!
+          </Typography>
+          <Typography gutterBottom variant='body1'>
+          <i className="chirp fab fa-twitter"></i>2-Hard continues to make headlines with his unlikely run up to 3rd place.
+          </Typography>
+          <Typography gutterBottom variant='body1'>
+          <i className="chirp fab fa-twitter"></i>Molly no longer the Vegas favorite to lose as she Shapoopies her way by fan idol Willa Mae Perrin in highest possible score.
           </Typography>
         </Grid>
       </Grid>
