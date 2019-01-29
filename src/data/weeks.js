@@ -71,7 +71,7 @@ const weeks = [{
   name: "Week 4",
   points: 4,
   cutNo: 3,
-  cuts: null,
+  cuts: [tracy, courtney],
 }, {
   name: "Week 3",
   points: 3,
