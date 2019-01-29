@@ -52,10 +52,10 @@ class Chirps extends Component {
         <Typography gutterBottom variant='h2'>Week 4 recap</Typography>
         <Divider></Divider>
           <Typography gutterBottom variant='body1'>
-          <i className="chirp fab fa-twitter"></i>Blaire at the Disco moves into first and has highest potential point score!
+          <i className="chirp fab fa-twitter"></i>New leader Doc 2-Hard continues to make headlines as the Cinderalla story of the year.
           </Typography>
           <Typography gutterBottom variant='body1'>
-          <i className="chirp fab fa-twitter"></i>2-Hard continues to make headlines with his unlikely run up to 3rd place.
+          <i className="chirp fab fa-twitter"></i>Blaire at the Disco moves to most likely to win the competition with slight high score lead over Yi-Mei and Kim
           </Typography>
           <Typography gutterBottom variant='body1'>
           <i className="chirp fab fa-twitter"></i>Molly no longer the Vegas favorite to lose as she Shapoopies her way by fan idol Willa Mae Perrin in highest possible score.

@@ -48,7 +48,10 @@ function getLineData(sortedStandings, dataWeeks) {
   let data = {
     labels,
     lineTension: 5,
-    datasets: weekPts
+    datasets: weekPts,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,}
   }
   return data;
 }
@@ -93,6 +96,7 @@ function getStandingsContent(dataStandings, constants, dataWeeks) {
       <Typography gutterBottom variant='h1'>
       {`Road to ${constants.curWeek.name}`}
       </Typography>
+
       <Grid>
       <Line data={lineChartData}/>
       </Grid>
