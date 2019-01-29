@@ -71,17 +71,17 @@ const weeks = [{
   name: "Week 4",
   points: 4,
   cutNo: 3,
+  currentWk,
   cuts: [tracy, courtney],
 }, {
   name: "Week 3",
   points: 3,
   cutNo: 4,
-  currentWk,
+  previousWk,
   cuts: [catherine, bri, nina, caitlin],
 }, {
   name: "Week 2",
   points: 2,
-  previousWk,
   cutNo: 4,
   cuts: [alexb, angelique, annie, erika],
 }, {
