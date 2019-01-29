@@ -40,6 +40,7 @@ function getScore(picks) {
   let prev = 0;
   let missingPts = 0;
   let prevMissingPts = 0;
+  let potentialRemainingPts = 0;
   let startingNo = 22;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
   dataWeeks.forEach(week=>{
@@ -59,11 +60,13 @@ function getScore(picks) {
       if (!(contestantIDs.indexOf(pickCnt) > -1)) {
       missingPts+= week.points;
       if (!week.currentWk)  prevMissingPts += week.points;
+      } else {
+        potentialRemainingPts += week.points;
       }
     })
   }
     })
-  return {cur,prev,missingPts, prevMissingPts};
+  return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts};
 }
 
 function compareScore(a,b) {
@@ -111,6 +114,7 @@ function lintStandings() {
     dataStandings[index].previousScore = score.prev;
     dataStandings[index].missingPts = score.missingPts;
     dataStandings[index].prevMissingPts = score.prevMissingPts;
+    dataStandings[index].potentialRemainingPts = score.potentialRemainingPts;
     filtered.push(user);
     secondFiltered.push(user);
   });

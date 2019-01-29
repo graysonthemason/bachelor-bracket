@@ -42,6 +42,7 @@ function getStandingsContent(dataStandings, constants) {
           <TableCell className="noBorder tiny"></TableCell>
             <TableCell></TableCell>
             <TableCell>Points</TableCell>
+            <TableCell>Highest Possible Score</TableCell>
             {constants.curWeek.name === "Week 3" ? <TableCell>Weekly Change</TableCell>:''}
           </TableRow>
         </TableHead>
@@ -61,6 +62,7 @@ function getStandingsContent(dataStandings, constants) {
               <TableCell align="center" className="dark tiny">{index+1}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.score}</TableCell>
+              <TableCell>{row.potentialRemainingPts + row.score}</TableCell>
               {constants.curWeek.name === "Week 3" ? <TableCell className={`${sClass}`}>{icon}{Math.abs(row.diff)|| ''}</TableCell> :''}
             </TableRow>)
           })}
