@@ -8,10 +8,12 @@
     "babel-cli": "6",
     "babel-polyfill": "^6.26.0",
     "babel-preset-react-app": "3",
+    "chart.js": "^2.7.3",
     "express": "^4.16.4",
     "express-favicon": "^2.0.1",
     "path": "^0.12.7",
     "react": "^16.7.0",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
   },

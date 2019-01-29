@@ -2,12 +2,15 @@ import React, {
   Component, Fragment
 } from 'react';
 
+import {Line} from 'react-chartjs-2';
+
 import {
   Typography,
   Table,
   TableBody,
   TableCell,
   TableHead,
+  Grid,
   TableRow
 } from '@material-ui/core';
 import {
@@ -32,8 +35,27 @@ function compareSecondaryScore(a,b) {
   return 0;
 }
 
-function getStandingsContent(dataStandings, constants) {
+function getLineData(sortedStandings, dataWeeks) {
+  // let data = {};
+  let colors = ['red', 'orangered','orange','gold', 'yellow', 'greenyellow','green','teal', 'dodgerblue','mediumblue', 'deeppink', 'violet', 'purple', 'maroon','burlywood','darkslategray']
+  let labels = dataWeeks.filter(week=>week.cuts).map(week=> week.name);
+  let weekPts = sortedStandings.map((standing, index)=>{
+    return {label: standing.name, 
+      data: standing.weekPts, 
+      fill: false, borderColor: [colors[index]], backgroundColor: [colors[index]]
+    }
+})
+  let data = {
+    labels,
+    lineTension: 5,
+    datasets: weekPts
+  }
+  return data;
+}
+
+function getStandingsContent(dataStandings, constants, dataWeeks) {
   const sortedStandings = dataStandings.sort(compareScore);
+  const lineChartData = getLineData(sortedStandings, dataWeeks);
   return (
     <Fragment>
       <Table className="noMargin">
@@ -68,13 +90,19 @@ function getStandingsContent(dataStandings, constants) {
           })}
         </TableBody>
       </Table>
+      <Typography gutterBottom variant='h1'>
+      {`Road to ${constants.curWeek.name}`}
+      </Typography>
+      <Grid>
+      <Line data={lineChartData}/>
+      </Grid>
     </Fragment>
   )
 }
 
 class Standings extends Component {
   render() {
-    const {dataStandings, constants} = this.props;
+    const {dataStandings, constants, dataWeeks} = this.props;
     return (<Fragment>
       <Typography gutterBottom variant='h1'>
       Leaderboard <img alt="" className="datBigRose" src={`${process.env.PUBLIC_URL}/assets/bigRose.png`}/>
@@ -82,7 +110,7 @@ class Standings extends Component {
       <Typography gutterBottom variant='h2'>
       {constants.curWeek.name} | ${constants.pot} pot
       </Typography>
-      {getStandingsContent(dataStandings, constants)}
+      {getStandingsContent(dataStandings, constants, dataWeeks)}
     </Fragment>
     );
   }

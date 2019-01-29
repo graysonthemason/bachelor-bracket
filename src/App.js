@@ -43,6 +43,7 @@ function getScore(picks) {
   let potentialRemainingPts = 0;
   let startingNo = 22;
   let totalCuts = 0;
+  let weekPts = []
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
@@ -57,6 +58,7 @@ function getScore(picks) {
           if (!week.currentWk)  prev += week.points;
         }
       });
+      weekPts.push(cur);
     }
     if (!week.cuts) {weekPicks.forEach(pickCnt=>{
       if (!(contestantIDs.indexOf(pickCnt) > -1)) {
@@ -69,7 +71,7 @@ function getScore(picks) {
   }
     })
     console.log(`STARTING NO (SHOULD BE 1: ${startingNo}`)
-  return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts};
+  return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts, weekPts};
 }
 
 function compareScore(a,b) {
@@ -153,6 +155,7 @@ function lintStandings() {
     dataStandings[index].previousScore = score.prev;
     dataStandings[index].missingPts = score.missingPts;
     dataStandings[index].prevMissingPts = score.prevMissingPts;
+    dataStandings[index].weekPts = score.weekPts;
     dataStandings[index].potentialRemainingPts = score.potentialRemainingPts;
     filtered.push(user);
     secondFiltered.push(user);
@@ -204,7 +207,7 @@ class App extends Component {
         jsx = <Brackets dataContestants={dataContestants} dataStandings={dataStandings} dataWeeks={dataWeeks} constants={constants}/>
         break;
         case "standings":
-        jsx = <Standings dataStandings={dataStandings} constants={constants}/>
+        jsx = <Standings dataStandings={dataStandings} constants={constants} dataWeeks={dataWeeks}/>
         break;
         case "chirps":
         jsx = <Chirps dataStandings={dataStandings} constants={constants}/>
