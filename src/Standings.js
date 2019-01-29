@@ -36,14 +36,14 @@ function getStandingsContent(dataStandings, constants) {
   const sortedStandings = dataStandings.sort(compareScore);
   return (
     <Fragment>
-      <Table>
+      <Table className="noMargin">
         <TableHead>
           <TableRow className="headerRow" >
           <TableCell className="noBorder tiny"></TableCell>
-            <TableCell></TableCell>
-            <TableCell>Points</TableCell>
-            <TableCell>Highest Possible Score</TableCell>
-            {constants.curWeek.name === "Week 3" ? <TableCell>Weekly Change</TableCell>:''}
+            <TableCell className="small"></TableCell>
+            <TableCell className="small">Points</TableCell>
+            <TableCell className="small">Highest Possible Score</TableCell>
+            {constants.curWeek.name === "Week 3" ? <TableCell className="small">Weekly Change</TableCell>:''}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -60,9 +60,9 @@ function getStandingsContent(dataStandings, constants) {
             }
             return (<TableRow key={`standing-row-${index}`}>
               <TableCell align="center" className="dark tiny">{index+1}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.score}</TableCell>
-              <TableCell>{row.potentialRemainingPts + row.score}</TableCell>
+              <TableCell className="small">{row.name}</TableCell>
+              <TableCell className="small">{row.score}</TableCell>
+              <TableCell className="small">{row.potentialRemainingPts + row.score}</TableCell>
               {constants.curWeek.name === "Week 3" ? <TableCell className={`${sClass}`}>{icon}{Math.abs(row.diff)|| ''}</TableCell> :''}
             </TableRow>)
           })}
