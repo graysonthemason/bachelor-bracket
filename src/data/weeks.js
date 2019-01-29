@@ -38,19 +38,16 @@ const weeks = [{
   name: "Final Rose",
   points: 30,
   cutNo: 1,
-
   cuts: null,
 }, {
   name: "Runner Up",
   points: 15,
   cutNo: 1,
-
   cuts: null,
 }, {
   name: "Fantasy Suite",
   points: 10,
   cutNo: 1,
-
   cuts: null,
 }, {
   name: "Hometowns",
@@ -65,12 +62,12 @@ const weeks = [{
 }, {
   name: "Week 5",
   points: 5,
-  cutNo: 3,
+  cutNo: 4,
   cuts: null,
 }, {
   name: "Week 4",
   points: 4,
-  cutNo: 3,
+  cutNo: 2,
   currentWk,
   cuts: [tracy, courtney],
 }, {

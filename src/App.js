@@ -42,9 +42,11 @@ function getScore(picks) {
   let prevMissingPts = 0;
   let potentialRemainingPts = 0;
   let startingNo = 22;
+  let totalCuts = 0;
   let contestantIDs = dataContestants.map((contestant)=>contestant.id)
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
+    let cutNo = week.cuts?week.cuts.length:cutNo;
     startingNo = startingNo - week.cutNo;
     const weekPicks = picks.slice(0, startingNo);
     if (week.cuts){
@@ -66,6 +68,7 @@ function getScore(picks) {
     })
   }
     })
+    console.log(`STARTING NO (SHOULD BE 1: ${startingNo}`)
   return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts};
 }
 
@@ -105,6 +108,42 @@ function comparePreviousSecondaryScore(a,b) {
   return 0;
 }
 
+// function getPercentages() {
+//   // get remaining contestants
+//   const list = dataContestants.filter(contestant=>!contestant.exitWk).map(el=>el.id)
+//   var permArr = [],
+//   usedChars = [];
+
+//   var getPermutations = function(list, maxLen) {
+//     // Copy initial values as arrays
+//     var perm = list.map(function(val) {
+//         return [val];
+//     });
+//     // Our permutation generator
+//     var generate = function(perm, maxLen, currLen) {
+//         // Reached desired length
+//         if (currLen === maxLen) {
+//             return perm;
+//         }
+//         // For each existing permutation
+//         for (var i = 0, len = perm.length; i < len; i++) {
+//             var currPerm = perm.shift();
+//             // Create new permutation
+//             for (var k = 0; k < list.length; k++) {
+//                 perm.push(currPerm.concat(list[k]));
+//             }
+//         }
+//         // Recurse
+//         return generate(perm, maxLen, currLen + 1);
+//     };
+//     // Start with size 1 because of initial values
+//     return generate(perm, maxLen, 1);
+// };
+// var res = getPermutations(list, 4);
+// res.forEach()
+// console.log(res);
+// }
+
 function lintStandings() {
   const filtered = [];
   const secondFiltered = [];
@@ -125,7 +164,6 @@ function lintStandings() {
     const oldIndex = findWithAttr(secondFilteredNew, "name", user["name"]);
     dataStandings[index].diff = oldIndex - curIndex;
   });
-  console.log(dataStandings);
 }
 
 function lintContestants() {
