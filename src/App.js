@@ -35,21 +35,22 @@ function findWithAttr(array, attr, value) {
   return -1;
 }
 
-function getScore(picks) {
+function getScore(picks, name) {
   let cur = 0;
   let prev = 0;
   let missingPts = 0;
   let prevMissingPts = 0;
   let potentialRemainingPts = 0;
-  let startingNo = 22;
+  let startingNo = 23;
   let totalCuts = 0;
   let weekPts = []
-  let contestantIDs = dataContestants.map((contestant)=>contestant.id)
+  let contestantIDs = dataContestants.map((contestant)=>contestant.id);
   dataWeeks.forEach(week=>{
     if (week.currentWk) constants.curWeek = week;
+    // make the cuts the number of actual cuts or predicted cuts
     let cutNo = week.cuts?week.cuts.length:cutNo;
     startingNo = startingNo - week.cutNo;
-    const weekPicks = picks.slice(0, startingNo);
+    const weekPicks = picks.slice(0, (startingNo-1));
     if (week.cuts){
       contestantIDs = contestantIDs.filter( ( el ) => !week.cuts.includes( el ) );
       weekPicks.forEach(pickCnt=>{
@@ -62,7 +63,7 @@ function getScore(picks) {
     }
     if (!week.cuts) {weekPicks.forEach(pickCnt=>{
       if (!(contestantIDs.indexOf(pickCnt) > -1)) {
-      missingPts+= week.points;
+        missingPts += week.points;
       if (!week.currentWk)  prevMissingPts += week.points;
       } else {
         potentialRemainingPts += week.points;
@@ -70,7 +71,7 @@ function getScore(picks) {
     })
   }
     })
-    console.log(`STARTING NO (SHOULD BE 1: ${startingNo}`)
+    console.log(`STARTING NO (SHOULD BE 1: ${startingNo})`);
   return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts, weekPts};
 }
 
@@ -150,7 +151,7 @@ function lintStandings() {
   const filtered = [];
   const secondFiltered = [];
   dataStandings.forEach((user,index)=>{
-    let score = getScore(user.picks);
+    let score = getScore(user.picks, user.name);
     dataStandings[index].score = score.cur;
     dataStandings[index].previousScore = score.prev;
     dataStandings[index].missingPts = score.missingPts;

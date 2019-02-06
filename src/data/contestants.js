@@ -43,7 +43,6 @@ const contestants = [{
 }, {
   id: 3,
   profilePic: "annie",
-
   name: "Annie",
   age: "23",
   job: "Financial Associate",
@@ -64,7 +63,6 @@ const contestants = [{
 }, {
   id: 4,
   profilePic: "bri",
-
   name: "Bri",
   age: "24",
   slug: "",
@@ -86,7 +84,6 @@ const contestants = [{
 }, {
   id: 5,
   profilePic: "caelynn",
-
   name: "Caelynn",
   age: "23",
   job: "Miss North Carolina",
@@ -114,7 +111,6 @@ const contestants = [{
 }, {
   id: 6,
   profilePic: "caitlin",
-
   name: "Caitlin",
   age: "25",
   job: "Realtor",
@@ -159,7 +155,6 @@ const contestants = [{
 }, {
   id: 8,
   profilePic: "catherine",
-
   name: "Catherine",
   age: "26",
   job: "DJ",
@@ -181,7 +176,6 @@ const contestants = [{
 }, {
   id: 9,
   profilePic: "courtney",
-
   name: "Courtney",
   age: "23",
   job: "Caterer",
@@ -227,7 +221,6 @@ const contestants = [{
 }, {
   id: 11,
   profilePic: "elyse",
-
   name: "Elyse",
   age: "31",
   job: "Makeup Artist",

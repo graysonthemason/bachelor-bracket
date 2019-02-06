@@ -19,58 +19,65 @@ import {ExpandMore, ArrowDropUp} from '@material-ui/icons';
 function getTableRows(row, dataContestants, weeks) {
   const jsx = [];
   let counter = 0;
+  let startingNum = dataContestants.length;
+  let weekNums = []
+  weeks.forEach((week)=>{
+    startingNum -= week.cutNo;
+    weekNums.push(startingNum)
+  });
+
   row.picks.map(el=>{
     const contestant = dataContestants.filter(function (cont) {return cont.id === el})[0];
     switch (counter) {
-      case 1:
+      case weekNums[9]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 2:
+        case weekNums[8]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 3:
+        case weekNums[7]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[7].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 4:
+        case weekNums[6]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[6].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 6:
+        case weekNums[5]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[5].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 9:
+        case weekNums[4]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[4].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 12:
+        case weekNums[3]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[3].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 15:
+        case weekNums[2]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[2].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
-        case 18:
+        case weekNums[1]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
@@ -95,7 +102,7 @@ function getTableRows(row, dataContestants, weeks) {
 class Brackets extends Component {
   getStandingsContent() {
     const {dataStandings, dataContestants, dataWeeks} = this.props;
-
+    const weeks = dataWeeks
     let sortedStandings = dataStandings;
   
     return (
@@ -110,7 +117,7 @@ class Brackets extends Component {
         </ExpansionPanelSummary>
         <List>
           {/* <TableBody> */}
-            {getTableRows(row, dataContestants, dataWeeks)}
+            {getTableRows(row, dataContestants, weeks)}
           {/* </TableBody> */}
         </List>
         </ExpansionPanel>
