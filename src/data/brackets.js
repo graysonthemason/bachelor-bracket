@@ -85,7 +85,7 @@ const brackets = [{
   picks: [cassie, hannag, tayshia, caelyn, hannab, onyeka, alexb, demi, erika, caitlin, elyse, nicole, sydney, heather, courtney, tracy, kirpa, bri]
 },
 {
-  name: "Jayson",
+  name: "Jayson B",
   profilePic:"",
   picks: [hannag, caelyn, sydney, cassie, kaity, demi, bri, tayshia, courtney, kirpa, annie, heather, hannab, nicole, angelique, caitlin, onyeka, elyse]
 },
