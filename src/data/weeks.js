@@ -52,24 +52,24 @@ const weeks = [{
 }, {
   name: "Hometowns",
   points: 7,
-  cutNo: 4,
+  cutNo: 3,
   cuts: null,
 }, {
   name: "Week 6",
   points: 6,
-  cutNo: 4,
-  cuts: null,
+  cutNo: 3,
+  currentWk,
+  cuts: [sydney, demi, kaity],
 }, {
   name: "Week 5",
   points: 5,
-  cutNo: 1,
-  currentWk,
-  cuts: [elyse],
+  previousWk,
+  cutNo: 3,
+  cuts: [elyse, onyeka, nicole],
 }, {
   name: "Week 4",
   points: 4,
   cutNo: 2,
-  previousWk,
   cuts: [tracy, courtney],
 }, {
   name: "Week 3",
