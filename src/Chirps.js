@@ -13,6 +13,24 @@ class Chirps extends Component {
         <Grid container justify="center" spacing={16}>
         <Grid item md={8} sm={10} xs={12}>
             <Typography gutterBottom variant="h2">
+              Week 6 recap
+            </Typography>
+            <Divider />
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Colton's tie....owwie
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+             Tight race forming up top between Yi-Mei T and Kim F...tied in points and highest possible.
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Chas M may be peaking at just the right time...you heard it here first!!!
+            </Typography>
+          </Grid>
+        <Grid item md={8} sm={10} xs={12}>
+            <Typography gutterBottom variant="h2">
               Week 5 recap
             </Typography>
             <Divider />
