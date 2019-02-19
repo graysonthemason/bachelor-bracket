@@ -53,17 +53,17 @@ const weeks = [{
   name: "Hometowns",
   points: 7,
   cutNo: 3,
-  cuts: null,
+  currentWk,
+  cuts: [kirpa, heather, hannab],
 }, {
   name: "Week 6",
   points: 6,
   cutNo: 3,
-  currentWk,
+  previousWk,
   cuts: [sydney, demi, kaity],
 }, {
   name: "Week 5",
   points: 5,
-  previousWk,
   cutNo: 3,
   cuts: [elyse, onyeka, nicole],
 }, {

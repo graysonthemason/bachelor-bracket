@@ -13,6 +13,24 @@ class Chirps extends Component {
         <Grid container justify="center" spacing={16}>
         <Grid item md={8} sm={10} xs={12}>
             <Typography gutterBottom variant="h2">
+              Week 7 recap
+            </Typography>
+            <Divider />
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Yi-Mei, Kim, and Katie are the last 3 still in the hunt for 1st...anyone's game!
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Great week for Lindsay K...some say too little too late.
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Molly finally moves up to vice-asshole...pass Kim your best card.
+            </Typography>
+          </Grid>
+        <Grid item md={8} sm={10} xs={12}>
+            <Typography gutterBottom variant="h2">
               Week 6 recap
             </Typography>
             <Divider />
