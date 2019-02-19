@@ -18,7 +18,7 @@ class Chirps extends Component {
             <Divider />
             <Typography gutterBottom variant="body1">
               <i className="chirp fab fa-twitter" />
-              Yi-Mei, Kim, and Katie are the last 3 still in the hunt for 1st...anyone's game!
+              Yi-Mei, Kim, Blaire and Katie are the last 3 still in the hunt for 1st...anyone's game!
             </Typography>
             <Typography gutterBottom variant="body1">
               <i className="chirp fab fa-twitter" />
