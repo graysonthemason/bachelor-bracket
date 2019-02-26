@@ -13,6 +13,24 @@ class Chirps extends Component {
         <Grid container justify="center" spacing={16}>
         <Grid item md={8} sm={10} xs={12}>
             <Typography gutterBottom variant="h2">
+              Week 8 recap
+            </Typography>
+            <Divider />
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Battle narrows down to Yi-Mei and Kim. We'll know our winner next week if Tayshia or Hanna G get sent home.
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Chas you've come a long way from that kid I grew up with on the playground...if we only knew then the heights to which you would soar.
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              Molly continues her rise from the gutter with two horses still in the race. #inspiredByYourResilience
+            </Typography>
+          </Grid>
+        <Grid item md={8} sm={10} xs={12}>
+            <Typography gutterBottom variant="h2">
               Week 7 recap
             </Typography>
             <Divider />
@@ -40,7 +58,7 @@ class Chirps extends Component {
             </Typography>
             <Typography gutterBottom variant="body1">
               <i className="chirp fab fa-twitter" />
-             Tight race forming up top between Yi-Mei T and Kim F...tied in points and highest possible.
+             Tight race forming up top between Yi-Mei and Kim...tied in points and highest possible.
             </Typography>
             <Typography gutterBottom variant="body1">
               <i className="chirp fab fa-twitter" />

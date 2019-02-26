@@ -48,18 +48,18 @@ const weeks = [{
   name: "Fantasy Suite",
   points: 10,
   cutNo: 1,
-  cuts: null,
+  currentWk,
+  cuts: [caelyn],
 }, {
   name: "Hometowns",
   points: 7,
   cutNo: 3,
-  currentWk,
+  previousWk,
   cuts: [kirpa, heather, hannab],
 }, {
   name: "Week 6",
   points: 6,
   cutNo: 3,
-  previousWk,
   cuts: [sydney, demi, kaity],
 }, {
   name: "Week 5",
@@ -79,7 +79,7 @@ const weeks = [{
 }, {
   name: "Week 2",
   points: 2,
-  cutNo: 4,
+  cutNo: 3,
   cuts: [alexb, angelique, annie, erika],
 }, {
   name: "Week 1",

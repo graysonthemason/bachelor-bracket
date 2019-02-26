@@ -46,11 +46,12 @@ function getScore(picks, name) {
   let weekPts = []
   let contestantIDs = dataContestants.map((contestant)=>contestant.id);
   dataWeeks.forEach(week=>{
+    debugger;
     if (week.currentWk) constants.curWeek = week;
     // make the cuts the number of actual cuts or predicted cuts
     let cutNo = week.cuts?week.cuts.length:cutNo;
     startingNo = startingNo - week.cutNo;
-    const weekPicks = picks.slice(0, (startingNo-1));
+    const weekPicks = picks.slice(0, (startingNo - 1));
     if (week.cuts){
       contestantIDs = contestantIDs.filter( ( el ) => !week.cuts.includes( el ) );
       weekPicks.forEach(pickCnt=>{
@@ -70,8 +71,10 @@ function getScore(picks, name) {
       }
     })
   }
+  if (name === "Kim" || name === "Yi-Mei") {
+    console.log(week.name, weekPts)
+  }
     })
-    console.log(`STARTING NO (SHOULD BE 1: ${startingNo})`);
   return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts, weekPts};
 }
 
