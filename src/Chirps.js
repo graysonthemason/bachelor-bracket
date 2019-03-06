@@ -11,7 +11,25 @@ class Chirps extends Component {
         </Typography>
         <Typography gutterBottom variant="h2" />
         <Grid container justify="center" spacing={16}>
-        <Grid item md={8} sm={10} xs={12}>
+          <Grid item md={8} sm={10} xs={12}>
+            <Typography gutterBottom variant="h2">
+              Week 9 recap
+            </Typography>
+            <Divider />
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              TOUGH...
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              TO...
+            </Typography>
+            <Typography gutterBottom variant="body1">
+              <i className="chirp fab fa-twitter" />
+              WATCH #whatDoWeDoWithAllTheseRoses
+            </Typography>
+          </Grid>
+          <Grid item md={8} sm={10} xs={12}>
             <Typography gutterBottom variant="h2">
               Week 8 recap
             </Typography>

@@ -26,14 +26,6 @@ function compareScore(a,b) {
     return 1;
   return 0;
 }
-function compareSecondaryScore(a,b) {
-  if (a.score > b.score) {
-    return -1;
-  }
-  if (a.score < b.score)
-    return 1;
-  return 0;
-}
 
 function getLineData(sortedStandings, dataWeeks) {
   // let data = {};

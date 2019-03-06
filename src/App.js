@@ -42,14 +42,12 @@ function getScore(picks, name) {
   let prevMissingPts = 0;
   let potentialRemainingPts = 0;
   let startingNo = 23;
-  let totalCuts = 0;
   let weekPts = []
   let contestantIDs = dataContestants.map((contestant)=>contestant.id);
   dataWeeks.forEach(week=>{
     debugger;
     if (week.currentWk) constants.curWeek = week;
     // make the cuts the number of actual cuts or predicted cuts
-    let cutNo = week.cuts?week.cuts.length:cutNo;
     startingNo = startingNo - week.cutNo;
     const weekPicks = picks.slice(0, (startingNo - 1));
     if (week.cuts){
