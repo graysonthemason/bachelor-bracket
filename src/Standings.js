@@ -89,8 +89,9 @@ function getStandingsContent(dataStandings, constants, dataWeeks) {
       {`Road to ${constants.curWeek.name}`}
       </Typography>
 
-      <Grid>
-      <Line data={lineChartData}/>
+      <Grid style={{minHeight: '800px'}}>
+      <Line options={{
+    responsive: true, maintainAspectRatio: false}} data={lineChartData}/>
       </Grid>
     </Fragment>
   )
