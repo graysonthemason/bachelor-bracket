@@ -42,9 +42,9 @@ const weeks = [{
 }, {
   name: "Runner Up",
   points: 15,
-  cutNo: 1,
+  cutNo: 2,
   currentWk,
-  cuts: [cassie],
+  cuts: [tayshia, hannag],
 }, {
   name: "Fantasy Suite",
   points: 10,
