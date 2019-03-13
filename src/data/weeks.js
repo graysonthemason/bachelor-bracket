@@ -37,19 +37,19 @@ function comparePoints(a, b) {
 const weeks = [{
   name: "Final Rose",
   points: 30,
-  cutNo: 1,
-  cuts: null,
+  currentWk,
+  cutNo: 0,
+  cuts: [],
 }, {
   name: "Runner Up",
   points: 15,
   cutNo: 2,
-  currentWk,
+  previousWk,
   cuts: [tayshia, hannag],
 }, {
   name: "Fantasy Suite",
   points: 10,
   cutNo: 1,
-  previousWk,
   cuts: [caelyn],
 }, {
   name: "Hometowns",
