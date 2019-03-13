@@ -25,10 +25,11 @@ function getTableRows(row, dataContestants, weeks) {
     startingNum -= week.cutNo;
     weekNums.push(startingNum)
   });
+  console.log(weekNums)
 
   row.picks.map(el=>{
     const contestant = dataContestants.filter(function (cont) {return cont.id === el})[0];
-    switch (counter) {
+    switch (counter +1) {
       case weekNums[9]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
@@ -80,6 +81,12 @@ function getTableRows(row, dataContestants, weeks) {
         case weekNums[1]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
+        </ListItem>)
+        break;
+        case weekNums[0]:
+        jsx.push(<ListItem className="weekBreak">
+          <ListItemText className="weekBreakText">{weeks[0].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
