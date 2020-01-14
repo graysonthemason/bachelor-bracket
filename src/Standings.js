@@ -34,11 +34,21 @@ function compareScore(a,b) {
 
 function getLineData(sortedStandings, dataWeeks) {
   // let data = {};
-  let colors = ['aqua', 'brown', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'lightorange', 'yellow', 'orangered', 'lightblue', 'seagreen', 'yellowgreen', "lightpink"  ]
+  let colors = ['rgba(25,129,0,.9)',    'rgba(77,195,44,.9)',    'rgba(190,244,61,.9)',
+    'rgba(56,126,115,.9)',    'rgba(51,193,153,.9)',    'rgba(135,255,157,.9)',
+    'rgba(36,105,186,.9)',    'rgba(117,207,250,.9)',    'rgba(189,93,253,.9)',
+    'rgba(137,27,176,.9)',    'rgba(241,99,145,.9)',    'rgba(254,173,192,.9)',
+    'rgba(198,40,28,.9)',    'rgba(249,90,0,.9)',    'rgba(255,158,50,.9)', 'rgba(11, 0, 161,.9)','rgba(237, 255, 77, .9)',
+    'rgba(255,224,122,.9)', 'rgba(252, 0, 97,.9)', 'rgba(116, 74, 255,.9)', 'rgba(255, 48, 48,.9)']
   let labels = dataWeeks.filter(week=>week.cuts).map(week=> week.name);
   let weekPts = sortedStandings.map((standing, index)=>{
     return {label: standing.name, 
-      data: standing.weekPts, 
+      data: standing.weekPts,
+      pointBorderWidth: 2,
+                    pointHoverRadius: 5,
+                    pointHoverBorderWidth: 3,
+                    pointRadius: 1,
+                    pointHitRadius: 50,
       fill: false, borderColor: [colors[index]], backgroundColor: [colors[index]]
     }
 })
