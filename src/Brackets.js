@@ -25,11 +25,18 @@ function getTableRows(row, dataContestants, weeks) {
     startingNum -= week.cutNo;
     weekNums.push(startingNum)
   });
-  console.log(weekNums)
+  console.log(weekNums, weeks)
 
   row.picks.map(el=>{
     const contestant = dataContestants.filter(function (cont) {return cont.id === el})[0];
-    switch (counter +1) {
+    console.log("counter", counter)
+    switch (counter) {
+      case weekNums[10]:
+        jsx.push(<ListItem className="weekBreak">
+          <ListItemText className="weekBreakText">{weeks[10].name}</ListItemText>
+          <ListItemIcon><ArrowDropUp/></ListItemIcon>
+        </ListItem>)
+        break;
       case weekNums[9]:
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
@@ -79,6 +86,7 @@ function getTableRows(row, dataContestants, weeks) {
         </ListItem>)
         break;
         case weekNums[1]:
+          console.log("hit")
         jsx.push(<ListItem className="weekBreak">
           <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
@@ -99,10 +107,10 @@ function getTableRows(row, dataContestants, weeks) {
     </ListItem>)
     counter += 1;
   })
-  jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
-          <ListItemIcon><ArrowDropUp/></ListItemIcon>
-        </ListItem>)
+    jsx.push(<ListItem className="weekBreak">
+            <ListItemText className="weekBreakText">{weeks[0].name}</ListItemText>
+            <ListItemIcon><ArrowDropUp/></ListItemIcon>
+          </ListItem>)
   return jsx;
 }
 

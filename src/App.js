@@ -68,6 +68,7 @@ function getScore(picks, name) {
       }
     })
   }
+  console.log(name, week, potentialRemainingPts)
     })
   return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts, weekPts};
 }
