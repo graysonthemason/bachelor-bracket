@@ -1,98 +1,130 @@
-const alexb = 1;
-const angelique = 2;
-const annie = 3;
-const bri = 4;
-const caelyn = 5;
-const caitlin = 6;
-const cassie = 7;
-const catherine = 8;
-const courtney = 9;
-const demi = 10;
-const elyse = 11;
-const erika = 12;
-const hannab = 13;
-const hannag = 14;
-const heather = 15;
-const kaity = 16
-const kirpa = 17;
-const nicole = 18;
-const nina = 19;
-const onyeka = 20;
-const sydney = 21;
-const tayshia= 22;
-const tracy = 23;
+const alayah = 1;
+const avonlea = 2;
+const alexa = 3;
+const courtney = 4;
+const deandra = 5;
+const eunice =6;
+const hannahann = 7;
+const jade = 8;
+const jasmine = 9;
+const jenna = 10;
+const kiarra = 11;
+const katrina = 12;
+const kelley = 13;
+const kelsey = 14;
+const kylie = 15;
+const lauren = 16;
+const lexi = 17;
+const madison = 18;
+const maurissa = 19;
+const megan = 20;
+const mykenna = 21;
+const natashia = 22;
+const payton = 23;
+const sarah = 24;
+const savannah = 25;
+const shiann = 26;
+const sydney = 27;
+const tammy = 28;
+const victoriaf = 29;
+const victoriap = 30;
 
 
 
 const brackets = [{
   name: "Yi-Mei",
   profilePic: "",
-  picks: [cassie, hannag, tayshia, caelyn, elyse, hannab, bri, heather, demi, caitlin, sydney, kaity, courtney, nicole, catherine, alexb, annie, kirpa]
+  picks: [madison, victoriap, hannahann, kelley, sydney, victoriaf, mykenna, natashia, kelsey, sarah, alexa, lexi, savannah, lauren, tammy, alayah, jasmine, deandra, payton, kiarra, courtney, shiann]
 },{
   name: "Lindsay",
   profilePic: "",
-  picks: [cassie, hannag, tayshia, caelyn, kaity, sydney, courtney, hannab, bri, tracy, catherine, caitlin, onyeka, nicole, heather, kirpa, annie, demi]
+  picks: [hannahann, madison, victoriaf, kelsey, kelley, sydney, victoriap, lauren, mykenna, natashia, lexi, tammy, shiann, sarah, jasmine, courtney, savannah, deandra, payton, alexa, kiarra, alayah]
 },{
   name: "Kim",
   profilePic: "",
-  picks: [cassie, tayshia, hannag, caelyn, hannab, demi,caitlin, onyeka, kaity, sydney, courtney, catherine, kirpa, elyse, nicole, tracy, heather, bri]
+  picks: [madison, victoriaf, kelley, alayah, victoriap, lauren, tammy, payton, mykenna, deandra, savannah, courtney, kelsey, lexi, sydney, jasmine, alexa, shiann, sarah, kiarra, natashia, megan]
 },{
   name: "Tennis",
   profilePic: "",
-  picks: [caelyn, hannag, hannab, erika, sydney, annie, bri, cassie, caitlin, demi, alexb, courtney, kaity, tayshia, nina, onyeka, heather, catherine]
+  picks: [madison, hannahann, kelley, lauren, alayah, victoriap, natashia, mykenna, courtney, shiann, victoriaf, tammy, kelsey, sydney, payton, kiarra, alexa, lexi, deandra, savannah, jasmine, sarah]
 },{
   name: "Cindy",
   profilePic: "",
-  picks: [cassie, hannag, annie, bri, caelyn, tayshia, kirpa, heather, kaity, hannab, onyeka, nina, elyse, caitlin, demi, erika, nicole, catherine]
+  picks: [madison, hannahann, kelley, lauren, kelsey, victoriap, lexi, alayah, sarah, jasmine, tammy, alexa, sydney, payton, mykenna, savannah, shiann, kiarra, courtney, natashia, deandra, victoriaf]
 },{
   name: "Molly",
   profilePic: "",
-  picks: [cassie, hannag, bri, alexb, courtney, caelyn, caitlin, kaity, hannab, heather, annie, angelique, erika, demi, catherine, kirpa, tayshia, onyeka]
+  picks: [hannahann, savannah, sarah, kelley, sydney, tammy, mykenna, madison, payton, lauren, victoriap, shiann, victoriaf, lexi, kiarra, jasmine, courtney, alayah, kelsey, deandra, natashia, alexa]
 },{
   name: "Liz",
   profilePic: "",
-  picks: [caelyn, hannag, cassie, hannab, elyse, caitlin, tayshia, erika, heather, angelique, kaity, demi, sydney, annie, nicole, tracy, courtney, catherine]
+  picks: [madison, kelley, victoriap, hannahann, kelsey, sydney, payton, sarah, deandra, alexa, victoriaf, mykenna, alayah, courtney, lauren, tammy, natashia, savannah, lexi, kiarra, jasmine, shiann]
 },{
   name: "Richard",
   profilePic: "",
-  picks: [alexb, hannag, caelyn, kaity, hannab, elyse, demi, cassie, onyeka, sydney, tayshia, kirpa, annie, nicole, tracy, bri, caitlin, catherine]
+  picks: [madison, kelley, victoriap, hannahann, kelsey, lauren, mykenna, alayah, tammy, savannah, sydney, victoriaf, payton, natashia, jasmine, alexa, lexi, sarah, kiarra, deandra, shiann, courtney]
 },{
   name: "Blaire",
   profilePic: "",
-  picks: [hannag, caelyn, demi, elyse, kaity, hannab, heather, nina, cassie, nicole, kirpa, caitlin, courtney, tayshia, bri, alexb, onyeka, catherine]
+  picks: [madison, victoriap, hannahann, kelley, sydney, sarah, victoriaf, tammy, mykenna, lauren, kelsey, savannah, deandra, jasmine, payton, alayah, lexi, kiarra, courtney, natashia, alexa, shiann]
 },{
   name: "Gray",
   profilePic: "",
-  picks: [cassie, hannag, caitlin, heather, caelyn, kaity, demi, tayshia, bri, nicole, kirpa, annie, elyse, courtney, hannab, catherine, erika, onyeka]
+  picks: [madison, hannahann, kelley, victoriap, sydney, victoriaf, alayah, lauren, mykenna, alexa, jasmine, natashia, kelsey, lexi, sarah, deandra, tammy, savannah, shiann, courtney, kiarra, payton]
 },{
-  name: "Willa",
-  profilePic: "",
-  picks: [elyse, nina, tracy, kirpa, hannab, cassie, catherine, demi, erika, nicole, hannag, caitlin, sydney, alexb, bri, annie, caelyn, heather]
-},
-{
   name: "Katie",
   profilePic:"",
-  picks: [cassie, caelyn, tayshia, hannag, courtney, caitlin, hannab, heather, tracy, sydney, kaity, demi, elyse, kirpa, nicole, annie, onyeka, catherine]
+  picks: [hannahann, madison, kelsey, victoriaf, kelley, mykenna, natashia, victoriap, sydney, lexi, deandra, alexa, shiann, savannah, tammy, courtney, kiarra, sarah, payton, alayah, jasmine, lauren]
 },
 {
   name: "Brittany",
   profilePic:"",
-  picks: [hannag, cassie, hannab, demi, caelyn, kaity, caitlin, erika, tayshia, bri, nicole, heather, kirpa, sydney, alexb, onyeka, elyse, catherine]
+  picks: [madison, hannahann, kelley, victoriap, mykenna, alayah, sarah, lexi, tammy, lauren, kelsey, victoriaf, payton, sydney, alexa, courtney, deandra, jasmine, kiarra, savannah, natashia, shiann]
 },
 {
   name: "Chas",
   profilePic:"",
-  picks: [cassie, hannag, tayshia, caelyn, hannab, onyeka, alexb, demi, erika, caitlin, elyse, nicole, sydney, heather, courtney, tracy, kirpa, bri]
+  picks: [kelsey, hannahann, madison, sarah, kelley, mykenna, lauren, savannah, natashia, kiarra, lexi, jasmine, deandra, shiann, payton, sydney, victoriap, victoriaf, courtney, alayah, alexa, tammy]
 },
 {
   name: "Jayson B",
   profilePic:"",
-  picks: [hannag, caelyn, sydney, cassie, kaity, demi, bri, tayshia, courtney, kirpa, annie, heather, hannab, nicole, angelique, caitlin, onyeka, elyse]
+  picks: [hannahann, madison, victoriap, kelley, sydney, alayah, savannah, deandra, victoriaf, mykenna, lauren, lexi, tammy, jasmine, sarah, natashia, kelsey, kiarra, payton, shiann, courtney, alexa]
 },
 {
   name: "Lauren",
   profilePic:"",
-  picks: [cassie, sydney, hannag, annie, caelyn, alexb, bri, demi, nicole, erika, heather, tracy, kaity, kirpa, nina, caitlin, courtney, hannab]
+  picks: [sarah, jasmine, hannahann, savannah, payton, mykenna, courtney, alexa, lexi, kiarra, victoriaf, victoriap, kelsey, tammy, lauren, sydney, madison, deandra, alayah, kelley, natashia, shiann]
+},
+{
+  name: "Meg",
+  profilePic:"",
+  picks: [madison, hannahann, savannah, victoriap, mykenna, sarah, victoriaf, lauren, payton, sydney, lexi, courtney, kelley, kiarra, tammy, alayah, natashia, jasmine, kelsey, deandra, alexa, shiann]
+},
+{
+  name: "Jimmy",
+  profilePic:"",
+  picks: [victoriap, madison, lauren, hannahann, kelley, tammy, natashia, kelsey, mykenna, alexa, kiarra, payton, victoriaf, alayah, courtney, savannah, sydney, lexi, sarah, deandra, jasmine, shiann]
+},
+{
+  name: "Meredith",
+  profilePic:"",
+  picks: [madison, kelley, hannahann, victoriap, jasmine, lauren, mykenna, payton, alayah, savannah, courtney, deandra, sydney, lexi, kelsey, alexa, kiarra, sarah, tammy, shiann, natashia, victoriaf]
+},
+{
+  name: "Mark",
+  profilePic:"",
+  picks: [sydney, madison, hannahann, savannah, sarah, kelley, mykenna, lauren, kelsey, courtney, victoriap, alexa, payton, tammy, victoriaf, deandra, shiann, lexi, kiarra, natashia, alayah, jasmine]
+},
+{
+  name: "Alex",
+  profilePic:"",
+  picks: [madison, kelley, victoriap, hannahann, mykenna, sarah, payton, lauren, alayah, kelsey, alexa, natashia, victoriaf, shiann, lexi, courtney, savannah, sydney, tammy, kiarra, jasmine, deandra]
+},
+{
+  name: "Josh",
+  profilePic:"",
+  picks: [sarah, madison, hannahann, kelley, payton, mykenna, victoriap, lauren, alayah, kelsey, alexa, victoriaf, shiann, lexi, courtney, natashia, savannah, sydney, tammy, kiarra, jasmine, deandra]
 }
 ]
 

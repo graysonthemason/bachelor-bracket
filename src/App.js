@@ -24,7 +24,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 // Custom child components
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-const constants = {pot: (dataStandings.length -1) *20}
+const constants = {pot: (dataStandings.length) * 20}
 
 function findWithAttr(array, attr, value) {
   for(var i = 0; i < array.length; i += 1) {
@@ -41,7 +41,7 @@ function getScore(picks, name) {
   let missingPts = 0;
   let prevMissingPts = 0;
   let potentialRemainingPts = 0;
-  let startingNo = 23;
+  let startingNo = dataContestants.length;
   let weekPts = []
   let contestantIDs = dataContestants.map((contestant)=>contestant.id);
   dataWeeks.forEach(week=>{
@@ -67,9 +67,6 @@ function getScore(picks, name) {
         potentialRemainingPts += week.points;
       }
     })
-  }
-  if (name === "Brittany" && week.name === "Runner Up") {
-    console.log(week.name, weekPts, weekPicks)
   }
     })
   return {cur,prev,missingPts, potentialRemainingPts, prevMissingPts, weekPts};
@@ -110,42 +107,6 @@ function comparePreviousSecondaryScore(a,b) {
     return 1;
   return 0;
 }
-
-// function getPercentages() {
-//   // get remaining contestants
-//   const list = dataContestants.filter(contestant=>!contestant.exitWk).map(el=>el.id)
-//   var permArr = [],
-//   usedChars = [];
-
-//   var getPermutations = function(list, maxLen) {
-//     // Copy initial values as arrays
-//     var perm = list.map(function(val) {
-//         return [val];
-//     });
-//     // Our permutation generator
-//     var generate = function(perm, maxLen, currLen) {
-//         // Reached desired length
-//         if (currLen === maxLen) {
-//             return perm;
-//         }
-//         // For each existing permutation
-//         for (var i = 0, len = perm.length; i < len; i++) {
-//             var currPerm = perm.shift();
-//             // Create new permutation
-//             for (var k = 0; k < list.length; k++) {
-//                 perm.push(currPerm.concat(list[k]));
-//             }
-//         }
-//         // Recurse
-//         return generate(perm, maxLen, currLen + 1);
-//     };
-//     // Start with size 1 because of initial values
-//     return generate(perm, maxLen, 1);
-// };
-// var res = getPermutations(list, 4);
-// res.forEach()
-// console.log(res);
-// }
 
 function lintStandings() {
   const filtered = [];
@@ -242,9 +203,9 @@ class App extends Component {
           <Button className={`${page === "contestants"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='contestants' aria-label="Open drawer">
              Contestants
             </Button>
-            <Button className={`${page === "chirps"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='chirps' aria-label="Open drawer">
+            {/* <Button className={`${page === "chirps"?'active':''} menuBtn`} onClick={this.changePage} size="medium" data-key='chirps' aria-label="Open drawer">
              Chirps
-            </Button>
+            </Button> */}
       </Toolbar>
       </AppBar>
       <Fragment>

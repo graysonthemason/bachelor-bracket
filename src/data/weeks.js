@@ -1,29 +1,36 @@
 const currentWk = true;
 const previousWk = true;
 
-const alexb = 1;
-const angelique = 2;
-const annie = 3;
-const bri = 4;
-const caelyn = 5;
-const caitlin = 6;
-const cassie = 7;
-const catherine = 8;
-const courtney = 9;
-const demi = 10;
-const elyse = 11;
-const erika = 12;
-const hannab = 13;
-const hannag = 14;
-const heather = 15;
-const kaity = 16
-const kirpa = 17;
-const nicole = 18;
-const nina = 19;
-const onyeka = 20;
-const sydney = 21;
-const tayshia = 22;
-const tracy = 23;
+const alayah = 1;
+const avonlea = 2;
+const alexa = 3;
+const courtney = 4;
+const deandra = 5;
+const eunice =6;
+const hannahann = 7;
+const jade = 8;
+const jasmine = 9;
+const jenna = 10;
+const kiarra = 11;
+const katrina = 12;
+const kelley = 13;
+const kelsey = 14;
+const kylie = 15;
+const lauren = 16;
+const lexi = 17;
+const madison = 18;
+const maurissa = 19;
+const megan = 20;
+const mykenna = 21;
+const natashia = 22;
+const payton = 23;
+const sarah = 24;
+const savannah = 25;
+const shiann = 26;
+const sydney = 27;
+const tammy = 28;
+const victoriaf = 29;
+const victoriap = 30;
 
 function comparePoints(a, b) {
   if (a.points < b.points) {
@@ -36,56 +43,51 @@ function comparePoints(a, b) {
 
 const weeks = [{
   name: "Final Rose",
+  cutNo: 1,
   points: 30,
-  currentWk,
-  cutNo: 0,
-  cuts: [],
 }, {
   name: "Runner Up",
+  cutNo: 1,
   points: 15,
-  cutNo: 2,
-  previousWk,
-  cuts: [tayshia, hannag],
 }, {
   name: "Fantasy Suite",
-  points: 10,
   cutNo: 1,
-  cuts: [caelyn],
+  points: 10,
 }, {
   name: "Hometowns",
-  points: 7,
+  cutNo: 1,
+  points: 8,
+}, {
+  name: "Week 7",
   cutNo: 3,
-  cuts: [kirpa, heather, hannab],
+  points: 7,
 }, {
   name: "Week 6",
-  points: 6,
   cutNo: 3,
-  cuts: [sydney, demi, kaity],
+  points: 6,
 }, {
   name: "Week 5",
-  points: 5,
   cutNo: 3,
-  cuts: [elyse, onyeka, nicole],
+  points: 5,
 }, {
   name: "Week 4",
+  cutNo: 3,
   points: 4,
-  cutNo: 2,
-  cuts: [tracy, courtney],
 }, {
   name: "Week 3",
+  cutNo: 3,
   points: 3,
-  cutNo: 4,
-  cuts: [catherine, bri, nina, caitlin],
 }, {
   name: "Week 2",
   points: 2,
   cutNo: 3,
-  cuts: [alexb, angelique, annie, erika],
+  currentWk,
+  cuts: [lauren, payton, courtney],
 }, {
-  name: "Week 1",
+  name: "Week 1",  previousWk,
   points: 0,
-  cutNo: 0,
-  cuts: null
+  cutNo: 8,
+  cuts: [avonlea, eunice, jade, jenna, katrina, kylie, maurissa, megan],
 }, ].sort(comparePoints)
 
 export default weeks;

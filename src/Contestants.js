@@ -14,7 +14,7 @@ import {
 
 function getExitTxt(exitTxt) {
 if (exitTxt) {
-  return (<Typography color="error" variant="body1">
+  return (<Typography style={{marginBottom: '-20px'}} color="error" variant="body1">
   {exitTxt}</Typography>)
 }
 }
@@ -27,7 +27,7 @@ function renderContestants(dataContestants) {
       <Grid key={`contestant-${contestant.id}`} item lg={2} md={3} sm={4} xs={12}>
       <Card>
         <CardActionArea>
-          <CardMedia className={classes} image={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}></CardMedia>
+          <CardMedia className={classes} image={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.jpg`}></CardMedia>
           </CardActionArea>
         <CardContent>
         <Typography variant="h5">

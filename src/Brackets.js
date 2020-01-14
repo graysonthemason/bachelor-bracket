@@ -94,7 +94,7 @@ function getTableRows(row, dataContestants, weeks) {
         break;
     }
     jsx.push(<ListItem>
-      <Avatar className={contestant.exitWk?"dunzo":""} src={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.png`}/>
+      <Avatar className={contestant.exitWk?"dunzo":""} src={`${process.env.PUBLIC_URL}/assets/contestant_profiles/${contestant.profilePic}.jpg`}/>
       <ListItemText>{contestant.name} </ListItemText>
     </ListItem>)
     counter += 1;

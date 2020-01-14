@@ -24,12 +24,17 @@ function compareScore(a,b) {
   }
   if (a.score < b.score)
     return 1;
+  if (a.score === b.score) {
+    if (a.potentialRemainingPts > b.potentialRemainingPts) {
+      return -1;
+    }
+  }
   return 0;
 }
 
 function getLineData(sortedStandings, dataWeeks) {
   // let data = {};
-  let colors = ['red', 'orangered','orange','gold', 'yellow', 'greenyellow','green','teal', 'dodgerblue','mediumblue', 'deeppink', 'violet', 'purple', 'maroon','burlywood','darkslategray']
+  let colors = ['aqua', 'brown', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'lightorange', 'yellow', 'orangered', 'lightblue', 'seagreen', 'yellowgreen', "lightpink"  ]
   let labels = dataWeeks.filter(week=>week.cuts).map(week=> week.name);
   let weekPts = sortedStandings.map((standing, index)=>{
     return {label: standing.name, 
