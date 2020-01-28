@@ -63,7 +63,7 @@ const weeks = [{
   points: 7,
 }, {
   name: "Week 6",
-  cutNo: 2,
+  cutNo: 3,
   points: 6,
 }, {
   name: "Week 5",
@@ -75,10 +75,10 @@ const weeks = [{
   points: 4,
 }, {
   name: "Week 3",
-  cutNo: 4,
+  cutNo: 3,
   currentWk,
   points: 3,
-  cuts: [alayah, alexa, jasmine, sarah ]
+  cuts: [alexa, jasmine, sarah ]
 }, {
   name: "Week 2",
   points: 2,
