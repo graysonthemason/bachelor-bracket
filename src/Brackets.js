@@ -21,9 +21,11 @@ function getTableRows(row, dataContestants, weeks) {
   let counter = 0;
   let startingNum = dataContestants.length;
   let weekNums = []
+  let curWeekName;
   weeks.forEach((week)=>{
     startingNum -= week.cutNo;
-    weekNums.push(startingNum)
+    weekNums.push(startingNum);
+    if (week.currentWk) curWeekName = week.name
   });
   console.log(weekNums, weeks)
 
@@ -32,69 +34,69 @@ function getTableRows(row, dataContestants, weeks) {
     console.log("counter", counter)
     switch (counter) {
       case weekNums[10]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[10].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[10].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[10].name?"curWeek":null}`}>{weeks[10].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
       case weekNums[9]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[9].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[9].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[9].name?"curWeek":null}`}>{weeks[9].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[8]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[8].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[8].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[8].name?"curWeek":null}`}>{weeks[8].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[7]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[7].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[7].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[7].name?"curWeek":null}`}>{weeks[7].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[6]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[6].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[6].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[6].name?"curWeek":null}`}>{weeks[6].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[5]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[5].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[5].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[5].name?"curWeek":null}`}>{weeks[5].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[4]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[4].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[4].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[4].name?"curWeek":null}`}>{weeks[4].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[3]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[3].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[3].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[3].name?"curWeek":null}`}>{weeks[3].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[2]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[2].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[2].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[2].name?"curWeek":null}`}>{weeks[2].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[1]:
           console.log("hit")
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[1].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[1].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[1].name?"curWeek":null}`}>{weeks[1].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
         case weekNums[0]:
-        jsx.push(<ListItem className="weekBreak">
-          <ListItemText className="weekBreakText">{weeks[0].name}</ListItemText>
+        jsx.push(<ListItem className={`weekBreak ${curWeekName === weeks[0].name?"curWeek":null}`}>
+          <ListItemText className={`weekBreakText ${curWeekName === weeks[0].name?"curWeek":null}`}>{weeks[0].name}</ListItemText>
           <ListItemIcon><ArrowDropUp/></ListItemIcon>
         </ListItem>)
         break;
