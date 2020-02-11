@@ -55,23 +55,20 @@ const weeks = [{
   points: 10,
 }, {
   name: "Hometowns",
-  cutNo: 1,
-  points: 8,
-}, {
-  name: "Week 7",
-  cutNo: 1,
+  cutNo: 2,
   points: 7,
+  cuts:[kelley, natashia],
+  currentWk,
 }, {
   name: "Week 6",
   cutNo: 4,
   points: 6,
   cuts:[victoriap, tammy, mykenna, sydney],
-  currentWk,
+  previousWk,
 }, {
   name: "Week 5",
   cutNo: 2,
   cuts: [shiann, lexi],
-  previousWk,
   points: 5,
 }, {
   name: "Week 4",
@@ -87,7 +84,6 @@ const weeks = [{
   name: "Week 2",
   points: 2,
   cutNo: 3,
-  
   cuts: [lauren, payton, courtney],
 }, {
   name: "Week 1",  
