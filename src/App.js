@@ -15,9 +15,9 @@ import {
 } from '@material-ui/core';
 
 import theme from './theme.js';
-import dataStandings from "./data/brackets"
-import dataWeeks from "./data/weeks"
-import dataContestants from './data/contestants'
+import dataStandings from "./data/brackets";
+import dataWeeks from "./data/weeks";
+import dataContestants from './data/contestants';
 
 // @material-ui
 import { MuiThemeProvider } from '@material-ui/core/styles';

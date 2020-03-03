@@ -97,6 +97,11 @@ const brackets = [{
   picks: [sarah, jasmine, hannahann, savannah, payton, mykenna, courtney, alexa, lexi, kiarra, victoriaf, victoriap, kelsey, tammy, lauren, sydney, madison, deandra, alayah, kelley, natashia, shiann]
 },
 {
+  name: "neruaL",
+  profilePic:"",
+  picks: [shiann,  natashia,kelley,alayah,deandra,madison, sydney, lauren,tammy,kelsey,victoriap,victoriaf,kiarra, lexi, alexa, courtney, mykenna,payton, savannah, hannahann,jasmine,sarah]
+},
+{
   name: "Meg",
   profilePic:"",
   picks: [madison, hannahann, savannah, victoriap, mykenna, sarah, victoriaf, lauren, payton, sydney, lexi, courtney, kelley, kiarra, tammy, alayah, natashia, jasmine, kelsey, deandra, alexa, shiann]
