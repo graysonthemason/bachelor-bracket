@@ -49,16 +49,16 @@ const weeks = [{
 }, {
   name: "Runner Up",
   cutNo: 1,
-  // cuts:[],
+  cuts:[victoriaf],
+  currentWk,
   points: 15,
 }, {
   name: "Fantasy Suite",
-  currentWk,
   cutNo: 1, 
   points: 10,
   cuts:[kelsey],
-}, {
   previousWk,
+}, {
   name: "Hometowns",
   cutNo: 2,
   points: 7,
